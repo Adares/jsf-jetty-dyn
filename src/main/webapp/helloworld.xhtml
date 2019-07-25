@@ -28,8 +28,8 @@
                 </p:selectOneMenu>
             </h:panelGrid>
             <h:panelGroup id="panelRepeatWrapper">
+                <p:remoteCommand name="rc" update="main" action="#{helloWorld.onDelete}"/>
                 <c:forEach id="panelRepeat" items="#{helloWorld.selectedFields}" var="field">
-                    <p:remoteCommand name="rc" update="main" action="#{helloWorld.onDelete}"/>
                     <h:panelGrid columns="3">
                         <h:outputText value="#{field}"
                                       style="vertical-align: top; width: 200px;"/>
