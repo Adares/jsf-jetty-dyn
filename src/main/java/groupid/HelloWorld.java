@@ -63,8 +63,7 @@ public class HelloWorld {
         values.put(f.get(), null);
     }
 
-    public void onDelete() {
-        String type = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("type");
+    public void onDelete(String type) {
         Optional<String> f = selectedFields.stream().filter(s -> s.equals(type)).findFirst();
         selectedFields.remove(f.get());
         availableFields.add(f.get());

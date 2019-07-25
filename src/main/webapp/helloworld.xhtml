@@ -28,14 +28,13 @@
                 </p:selectOneMenu>
             </h:panelGrid>
             <h:panelGroup id="panelRepeatWrapper">
-                <p:remoteCommand name="rc" update="main" action="#{helloWorld.onDelete}"/>
                 <c:forEach id="panelRepeat" items="#{helloWorld.selectedFields}" var="field">
                     <h:panelGrid columns="3">
                         <h:outputText value="#{field}"
                                       style="vertical-align: top; width: 200px;"/>
                         <h:inputTextarea value="#{helloWorld.values[field]}"
                                          style="width: 550px; height: 50px;"/>
-                        <p:commandButton value="x" onclick="#{'rc({type : \''.concat(field).concat('\'})')}">
+                        <p:commandButton value="x" action="#{helloWorld.onDelete(field)}" update="main">
                         </p:commandButton>
                     </h:panelGrid>
                 </c:forEach>
