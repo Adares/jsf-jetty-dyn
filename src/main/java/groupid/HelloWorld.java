@@ -56,7 +56,7 @@ public class HelloWorld {
         this.values = values;
     }
 
-    public void changeOfferType(String type) {
+    public void change(String type) {
         Optional<String> f = availableFields.stream().filter(s -> s.equals(type)).findFirst();
         selectedFields.add(f.get());
         availableFields.remove(f.get());

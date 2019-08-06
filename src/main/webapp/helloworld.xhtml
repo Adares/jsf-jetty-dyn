@@ -24,7 +24,7 @@
                     <f:selectItems value="#{helloWorld.availableFields}" var="def" itemLabel="#{def}" itemValue="#{def}"/>
                     <p:ajax event="change"
                             update="main"
-                            listener="#{helloWorld.changeOfferType(helloWorld.selectedType)}"/>/>
+                            listener="#{helloWorld.change(helloWorld.selectedType)}"/>/>
                 </p:selectOneMenu>
             </h:panelGrid>
             <h:panelGroup id="panelRepeatWrapper">
